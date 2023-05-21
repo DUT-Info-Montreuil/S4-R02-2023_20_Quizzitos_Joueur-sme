@@ -17,4 +17,45 @@ public class JoueurDTO {
 		this.langue = langue;
 		this.interetList = interetList;
 	}
+	
+	public String getNom() {
+		return nom;
+	}
+
+	public void setNom(String nom) {
+		this.nom = nom;
+	}
+
+	public String getPseudo() {
+		return pseudo;
+	}
+
+	public void setPseudo(String pseudo) {
+		this.pseudo = pseudo;
+	}
+
+	public int getAnneeNaiss() {
+		return anneeNaiss;
+	}
+
+	public void setAnneeNaiss(int anneeNaiss) {
+		this.anneeNaiss = anneeNaiss;
+	}
+
+	public LanguesEnum getLangue() {
+		return langue;
+	}
+
+	public void setLangue(LanguesEnum langue) {
+		this.langue = langue;
+	}
+
+	public String[] getInteretList() {
+		return interetList;
+	}
+
+	public void setInteretList(String[] interetList) {
+		this.interetList = interetList;
+	}
+	
 }
