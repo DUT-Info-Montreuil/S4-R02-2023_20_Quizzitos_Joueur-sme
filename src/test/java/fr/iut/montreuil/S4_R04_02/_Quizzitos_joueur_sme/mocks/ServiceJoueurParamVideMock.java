@@ -8,6 +8,10 @@ import fr.iut.montreuil.S4_R04_02._Quizzitos_joueur_sme.utils.exceptions.*;
 public class ServiceJoueurParamVideMock implements IserviceJoueur {
     @Override
     public JoueurDTO ajouterJoueur(String nom, String pseudo, int anneeNaiss, LanguesEnum langue, String[] interetList) throws JoueurDejaExistantException, ParametreManquantException, DateFormatIncorrecteException, JoueurNonExistantException, LangueNonRéférencéeException {
-        throw new ParametreManquantException("Parametre du pseudo vide");
+       if (nom.isEmpty()) {
+           throw new ParametreManquantException("Parametre du pseudo vide");
+       } else {
+           return new JoueurDTO(nom,pseudo,anneeNaiss,langue,interetList);
+       }
     }
 }

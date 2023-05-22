@@ -15,10 +15,10 @@ public class ServiceJoueurDoublonMock implements IserviceJoueur {
     public JoueurDTO ajouterJoueur(String nom, String pseudo, int anneeNaiss, LanguesEnum langue, String[] interetList) throws JoueurDejaExistantException, ParametreManquantException, DateFormatIncorrecteException, JoueurNonExistantException, LangueNonRéférencéeException {
         {
 
-        if (nom.equals("Joueur1")) return new JoueurDTO("Joueur1", "MemePseudo", 2003, LanguesEnum.FRANCAIS, new String[]{"danse, guitare"});
-
-        else
+        if (pseudo.equals("Joueur1"))  // on imagine un joueur1 déjà existant
             throw new JoueurDejaExistantException("Levé d 'exception de joueur en double depuis le Mock");
+        else
+            return new JoueurDTO("Joueur12", "MemePseudo", 2003, LanguesEnum.FRANCAIS, new String[]{"danse, guitare"});
     }
 
 

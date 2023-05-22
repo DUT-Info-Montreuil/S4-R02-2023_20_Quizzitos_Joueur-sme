@@ -11,14 +11,12 @@ public class ServiceJoueurDateFormatMock implements IserviceJoueur {
 
     @Override
     public JoueurDTO ajouterJoueur(String nom, String pseudo, int anneeNaiss, LanguesEnum langue, String[] interetList) throws JoueurDejaExistantException, ParametreManquantException, DateFormatIncorrecteException, JoueurNonExistantException, LangueNonRéférencéeException {
-        if ( anneeNaiss > 1924 && anneeNaiss < 2020 )
+        if ( anneeNaiss > 1924 && anneeNaiss < 2020 ) {
 
-            return new JoueurDTO(nom,pseudo,3000,langue,interetList);
+                return new JoueurDTO(nom, pseudo, anneeNaiss, langue, interetList);
 
-        else
+        } else {
             throw new DateFormatIncorrecteException("Levé d 'exception Date incorrecte depuis le Mock");
+        }
     }
-
-
-
 }
