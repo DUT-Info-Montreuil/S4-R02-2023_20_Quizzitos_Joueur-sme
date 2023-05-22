@@ -3,7 +3,7 @@ package src.main.java.fr.iut.montreuil.S4_R04_02._Quizzitos_joueur_sme.entities.
 import src.main.java.fr.iut.montreuil.S4_R04_02._Quizzitos_joueur_sme.modeles.IserviceJoueur;
 import src.main.java.fr.iut.montreuil.S4_R04_02._Quizzitos_joueur_sme.modeles.JoueurDTO;
 import src.main.java.fr.iut.montreuil.S4_R04_02._Quizzitos_joueur_sme.modeles.JoueurDejaExistantException;
-import src.main.java.fr.iut.montreuil.S4_R04_02._Quizzitos_joueur_sme.modeles.LanguesEnum;
+import fr.iut.montreuil.S4_R04_02._Quizzitos_joueur_sme.modeles.LanguesEnum;
 
 public class JoueurSI implements IserviceJoueur {
 
