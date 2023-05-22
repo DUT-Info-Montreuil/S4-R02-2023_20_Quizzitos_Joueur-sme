@@ -8,8 +8,7 @@ import fr.iut.montreuil.S4_R04_02._Quizzitos_joueur_sme.modeles.IserviceJoueur;
 import fr.iut.montreuil.S4_R04_02._Quizzitos_joueur_sme.utils.enums.LanguesEnum;
 import fr.iut.montreuil.S4_R04_02._Quizzitos_joueur_sme.utils.exceptions.*;
 import junit.framework.TestCase;
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.Test;
+
 
 
 /**
@@ -22,7 +21,7 @@ public class ServiceJoueurTest extends TestCase {
 
         JoueurDTO joueur1 = serviceJoueur.ajouterJoueur("John Doe", "john123", 1990, LanguesEnum.ANGLAIS, new String[]{"football", "movies"});
 
-        JoueurDTO joueur2 = serviceJoueur.ajouterJoueur("John Doe", "john123", 1990, LanguesEnum.ANGLAIS, new String[]{"football", "movies"});
+        JoueurDTO joueur2 = serviceJoueur.ajouterJoueur("Joueur1", "john123", 1990, LanguesEnum.ANGLAIS, new String[]{"football", "movies"});
 
         assertNull(joueur2);
     }
