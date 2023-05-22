@@ -6,10 +6,12 @@ import fr.iut.montreuil.S4_R04_02._Quizzitos_joueur_sme.mocks.ServiceJoueurDoubl
 import fr.iut.montreuil.S4_R04_02._Quizzitos_joueur_sme.mocks.ServiceJoueurSimpleMockOk;
 import fr.iut.montreuil.S4_R04_02._Quizzitos_joueur_sme.modeles.IserviceJoueur;
 import fr.iut.montreuil.S4_R04_02._Quizzitos_joueur_sme.utils.enums.LanguesEnum;
-import fr.iut.montreuil.S4_R04_02._Quizzitos_joueur_sme.utils.exceptions.*;
+import fr.iut.montreuil.S4_R04_02._Quizzitos_joueur_sme.utils.exceptions.DateFormatIncorrecteException;
+import fr.iut.montreuil.S4_R04_02._Quizzitos_joueur_sme.utils.exceptions.JoueurDejaExistantException;
+import fr.iut.montreuil.S4_R04_02._Quizzitos_joueur_sme.utils.exceptions.JoueurNonExistantException;
+import fr.iut.montreuil.S4_R04_02._Quizzitos_joueur_sme.utils.exceptions.LangueNonRéférencéeException;
+import fr.iut.montreuil.S4_R04_02._Quizzitos_joueur_sme.utils.exceptions.ParametreManquantException;
 import junit.framework.TestCase;
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.Test;
 
 
 /**
