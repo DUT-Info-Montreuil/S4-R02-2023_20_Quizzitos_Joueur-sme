@@ -6,15 +6,18 @@ import fr.iut.montreuil.S4_R04_02._Quizzitos_joueur_sme.mocks.ServiceJoueurDoubl
 import fr.iut.montreuil.S4_R04_02._Quizzitos_joueur_sme.mocks.ServiceJoueurSimpleMockOk;
 import fr.iut.montreuil.S4_R04_02._Quizzitos_joueur_sme.modeles.IserviceJoueur;
 import fr.iut.montreuil.S4_R04_02._Quizzitos_joueur_sme.utils.enums.LanguesEnum;
-import fr.iut.montreuil.S4_R04_02._Quizzitos_joueur_sme.utils.exceptions.JoueurDejaExistantException;
+import fr.iut.montreuil.S4_R04_02._Quizzitos_joueur_sme.utils.exceptions.*;
 import junit.framework.TestCase;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
+
 
 /**
  * Unit test for simple App.
  */
 public class ServiceJoueurTest extends TestCase {
 
-    public void testServiceJoueurDoublonTest() throws JoueurDejaExistantException {
+    public void testServiceJoueurDoublonTest() throws JoueurDejaExistantException, DateFormatIncorrecteException, ParametreManquantException, LangueNonRéférencéeException, JoueurNonExistantException {
         IserviceJoueur serviceJoueur = new ServiceJoueurDoublonMock();
 
         JoueurDTO joueur1 = serviceJoueur.ajouterJoueur("John Doe", "john123", 1990, LanguesEnum.ANGLAIS, new String[]{"football", "movies"});
@@ -24,7 +27,7 @@ public class ServiceJoueurTest extends TestCase {
         assertNull(joueur2);
     }
 
-    public void testServiceJoueurAjoutTest() {
+    public void testServiceJoueurAjoutTest() throws DateFormatIncorrecteException, JoueurDejaExistantException, ParametreManquantException, LangueNonRéférencéeException, JoueurNonExistantException {
         IserviceJoueur serviceJoueur = new ServiceJoueurSimpleMockOk();
 
         JoueurDTO joueur = serviceJoueur.ajouterJoueur("John Doe", "john123", 1990, LanguesEnum.ANGLAIS, new String[]{"football", "movies"});
@@ -32,11 +35,15 @@ public class ServiceJoueurTest extends TestCase {
         assertNotNull(joueur);
     }
 
-    public void testServiceJoueurDateFormatTest() {
+    public void testServiceJoueurDateFormatTest() throws DateFormatIncorrecteException, JoueurDejaExistantException, ParametreManquantException, LangueNonRéférencéeException, JoueurNonExistantException {
         IserviceJoueur serviceJoueur = new ServiceJoueurDateFormatMock();
 
         JoueurDTO joueur = serviceJoueur.ajouterJoueur("John Doe", "john123", 30000, LanguesEnum.ANGLAIS, new String[]{"football", "movies"});
 
         assertNull(joueur);
+    }
+
+    public void testServiceJoueurParamVide() throws ParametreManquantException {
+        //AssertThrows inexistant
     }
 }

@@ -1,9 +1,8 @@
-package src.main.java.fr.iut.montreuil.S4_R04_02._Quizzitos_joueur_sme.entities.dto;
+package fr.iut.montreuil.S4_R04_02._Quizzitos_joueur_sme.entities.dto;
 
-import src.main.java.fr.iut.montreuil.S4_R04_02._Quizzitos_joueur_sme.modeles.IserviceJoueur;
-import src.main.java.fr.iut.montreuil.S4_R04_02._Quizzitos_joueur_sme.modeles.JoueurDTO;
-import src.main.java.fr.iut.montreuil.S4_R04_02._Quizzitos_joueur_sme.modeles.JoueurDejaExistantException;
-import fr.iut.montreuil.S4_R04_02._Quizzitos_joueur_sme.modeles.LanguesEnum;
+import fr.iut.montreuil.S4_R04_02._Quizzitos_joueur_sme.modeles.*;
+import fr.iut.montreuil.S4_R04_02._Quizzitos_joueur_sme.utils.enums.LanguesEnum;
+import fr.iut.montreuil.S4_R04_02._Quizzitos_joueur_sme.utils.exceptions.JoueurDejaExistantException;
 
 public class JoueurSI implements IserviceJoueur {
 
