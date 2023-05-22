@@ -26,10 +26,10 @@ public abstract  class ServiceJoueurBean implements IserviceJoueur {
             throw new ParametreManquantException("pseudo manquant");
         }
 		if(anneeNaiss<1930 || anneeNaiss>2023){
-            throw new DateFormatIncorrecteException();
+            throw new DateFormatIncorrecteException("");
         }
 		if(pseudoListe.contains(pseudo)) {
-			throw new JoueurDejaExistantException();
+			throw new JoueurDejaExistantException("");
 		}
 		if(langue.toString().isEmpty()) {
 			throw new LangueNonRéférencéeException();
