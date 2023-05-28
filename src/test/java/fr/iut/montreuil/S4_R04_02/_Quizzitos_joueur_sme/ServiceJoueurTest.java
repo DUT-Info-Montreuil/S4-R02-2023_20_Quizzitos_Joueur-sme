@@ -66,4 +66,25 @@ public class ServiceJoueurTest  {
                     JoueurDTO joueur = serviceJoueur.ajouterJoueur("", "john123", 30000, LanguesEnum.ANGLAIS, new String[]{"football", "movies"});
                 });
     }
+    
+    //Itération 2 : Statistique
+    @Test
+    public void testInsererDonneeIncorrect() throws DonneeIncorrectException {
+        JoueurDTO joueur1 = serviceJoueur.ajouterJoueur("Joueur2", "Joueur2", 1990, LanguesEnum.ANGLAIS, new String[]{"football", "movies"});
+        serviceJoueur = new ServiceJoueurRecupStatsMock();
+        Assertions.assertThrows(DonneeIncorrectException.class, () -> {
+        	serviceJoueur.insererStatsJoueur("Joueur2", 2, 3, 587676986554543436546789779808989867);
+        });
+    }
+    
+    @Test void testStatsJoueurNontrouvee(){
+    	serviceJoueur = new ServiceJoueurRecupStatsMock();
+        ArrayList<JoueurDTO> listJoueurs = new ArrayList<JoueurDTO>();
+        JoueurDTO joueur1 = listJoueurs.ajouterJoueur("Joueur2", "Joueur2", 1990, LanguesEnum.ANGLAIS, new String[]{"football", "movies"});
+
+        Assertions.assertThrows(DonneeIncorrectException.class, () -> {
+        	serviceJoueur.récupérerStatsPartie("nicoco");
+        });
+    }
+    
 }
